@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="Udm_Smack" customModuleProvider="target">
+            <connections>
+                <outlet property="bgView" destination="zY7-Vh-VIr" id="g8G-XJ-cSF"/>
+                <outlet property="logOutBtn" destination="DXg-2s-JNn" id="YEF-uo-HUB"/>
+                <outlet property="profileImg" destination="XGo-yo-Kc6" id="OJL-T4-RTY"/>
+                <outlet property="titleViewLbl" destination="SPd-Tp-c8E" id="Tva-8g-oAL"/>
+                <outlet property="userEmail" destination="hBO-8S-zDT" id="Sbc-Uq-IWx"/>
+                <outlet property="userName" destination="JC6-au-RpB" id="ug3-ek-KuO"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zY7-Vh-VIr">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JX9-uZ-ExL">
+                    <rect key="frame" x="20" y="173.5" width="335" height="320"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86c-AC-MKI">
+                            <rect key="frame" x="278" y="5" width="52" height="42"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="closeButton" title=""/>
+                            <connections>
+                                <action selector="closePressed:" destination="-1" eventType="touchUpInside" id="K4m-HZ-gFg"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JC6-au-RpB">
+                            <rect key="frame" x="152.5" y="201" width="30" height="25"/>
+                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                            <color key="textColor" red="0.12941176469999999" green="0.070588235289999995" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPd-Tp-c8E">
+                            <rect key="frame" x="81.5" y="35" width="172" height="44"/>
+                            <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="31"/>
+                            <color key="textColor" red="0.12941176469999999" green="0.070588235289999995" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smackProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="XGo-yo-Kc6" customClass="CircleImage" customModule="Udm_Smack" customModuleProvider="target">
+                            <rect key="frame" x="117.5" y="91" width="100" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="XGo-yo-Kc6" secondAttribute="height" multiplier="1:1" id="7Rl-gL-dfE"/>
+                                <constraint firstAttribute="width" constant="100" id="rNt-oC-Qbv"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tam@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBO-8S-zDT">
+                            <rect key="frame" x="109.5" y="226" width="116" height="25"/>
+                            <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="17"/>
+                            <color key="textColor" red="0.12941176469999999" green="0.070588235289999995" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIa-nm-Gnj">
+                            <rect key="frame" x="137.5" y="168" width="60" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="eC6-RB-2mg"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain">
+                                <imageReference key="image" image="info.circle.fill" catalog="system" symbolScale="large"/>
+                                <color key="baseForegroundColor" red="0.12941176470588234" green="0.070588235294117646" blue="0.80000000000000004" alpha="0.8980392157" colorSpace="calibratedRGB"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="pushUpdateUserNameVCPressed:" destination="-1" eventType="touchUpInside" id="fMm-l8-qTR"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXg-2s-JNn">
+                            <rect key="frame" x="125" y="271.5" width="85" height="42.5"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Logout">
+                                <fontDescription key="titleFontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                <color key="baseForegroundColor" red="0.12941176469999999" green="0.070588235289999995" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="logOutPressed:" destination="-1" eventType="touchUpInside" id="64t-1W-PUp"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="SPd-Tp-c8E" firstAttribute="centerX" secondItem="JX9-uZ-ExL" secondAttribute="centerX" id="8zN-GF-DfU"/>
+                        <constraint firstItem="XGo-yo-Kc6" firstAttribute="top" secondItem="SPd-Tp-c8E" secondAttribute="bottom" constant="12" id="HNx-fD-BkK"/>
+                        <constraint firstItem="hBO-8S-zDT" firstAttribute="centerX" secondItem="JX9-uZ-ExL" secondAttribute="centerX" id="Kt1-NT-ssj"/>
+                        <constraint firstItem="SPd-Tp-c8E" firstAttribute="top" secondItem="JX9-uZ-ExL" secondAttribute="top" constant="35" id="M1M-ln-go2"/>
+                        <constraint firstItem="uIa-nm-Gnj" firstAttribute="top" secondItem="SPd-Tp-c8E" secondAttribute="bottom" constant="89" id="X8u-8o-g0N"/>
+                        <constraint firstAttribute="height" constant="320" id="Xwh-hG-Q8Z"/>
+                        <constraint firstAttribute="trailing" secondItem="86c-AC-MKI" secondAttribute="trailing" constant="5" id="a75-qp-fHT"/>
+                        <constraint firstItem="86c-AC-MKI" firstAttribute="top" secondItem="JX9-uZ-ExL" secondAttribute="top" constant="5" id="bgd-OH-kSe"/>
+                        <constraint firstItem="JC6-au-RpB" firstAttribute="top" secondItem="XGo-yo-Kc6" secondAttribute="bottom" constant="10" id="f0f-bt-y6G"/>
+                        <constraint firstItem="uIa-nm-Gnj" firstAttribute="centerX" secondItem="JX9-uZ-ExL" secondAttribute="centerX" id="hto-0T-rtN"/>
+                        <constraint firstItem="XGo-yo-Kc6" firstAttribute="centerX" secondItem="JX9-uZ-ExL" secondAttribute="centerX" id="msw-bS-4Pi"/>
+                        <constraint firstItem="hBO-8S-zDT" firstAttribute="top" secondItem="JC6-au-RpB" secondAttribute="bottom" id="qPC-e9-VZi"/>
+                        <constraint firstAttribute="bottom" secondItem="DXg-2s-JNn" secondAttribute="bottom" constant="6" id="tWP-nU-Oaw"/>
+                        <constraint firstItem="JC6-au-RpB" firstAttribute="centerX" secondItem="JX9-uZ-ExL" secondAttribute="centerX" id="vDj-M4-6wR"/>
+                        <constraint firstItem="DXg-2s-JNn" firstAttribute="centerX" secondItem="JX9-uZ-ExL" secondAttribute="centerX" id="vtX-bN-s0Q"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="zY7-Vh-VIr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5Sb-Eu-3RP"/>
+                <constraint firstItem="zY7-Vh-VIr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5gc-yy-n6X"/>
+                <constraint firstItem="zY7-Vh-VIr" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Dbk-Yz-i8g"/>
+                <constraint firstItem="JX9-uZ-ExL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="TnI-ko-v6W"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JX9-uZ-ExL" secondAttribute="trailing" constant="20" id="Zw9-5F-Dup"/>
+                <constraint firstAttribute="trailing" secondItem="zY7-Vh-VIr" secondAttribute="trailing" id="b3K-KP-QIj"/>
+                <constraint firstItem="JX9-uZ-ExL" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="kof-91-uBb"/>
+            </constraints>
+            <point key="canvasLocation" x="138.40000000000001" y="28.335832083958024"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="closeButton" width="28" height="28"/>
+        <image name="info.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="smackProfileIcon" width="192" height="192"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

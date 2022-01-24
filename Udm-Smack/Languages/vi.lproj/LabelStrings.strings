@@ -1,0 +1,21 @@
+//MARK: SwitchLanguagesVC
+"Switch Languages" = "Thay Đổi Ngôn Ngữ";
+
+//MARK: CreateAnAccountVC
+"Create an account" = "Tạo tài khoản";
+
+//MARK: UpdateAccountVC
+"Update User Name" = "Cập Nhật Tài Khoản";
+
+//MARK: ProfileVC
+"Your Profile" = "Hồ Sơ Cá Nhân";
+
+//MARK: CreateChannelVC
+"Create A Channel" = "Tạo Kênh Trò Chuyện";
+
+//MARK: ChannelVC
+"Please Log In" = "Xin Hãy Đăng Nhập";
+"List of channels" = "Danh sách kênh";
+"typing a message" = "đang nhắn tin";
+"are " = "";
+"is " = "";

@@ -1,0 +1,26 @@
+//MARK: SwitchLanguagesVC
+"Cancel" = "Huỷ Bỏ";
+
+//MARK: CreateAccountVC
+"Choose avatar" = "Chọn hình nền";
+"Generate background color" = "Chọn màu nền";
+"Create Account" = "Tạo Tài Khoản";
+
+//MARK: AvatarPickerVC
+"Dark" = "Tông tối";
+"Light" = "Tông sáng";
+
+//MARK: LogInVC
+"Login" = "Đăng Nhập";
+"Don't have any account? Sign up here" = "Không có tài khoản? Đăng ký ở đây";
+
+//MARK: UpdateUserVC
+"Change" = "Thay đổi";
+
+//MARK: ProfileVC
+"Logout" = "Đăng xuất";
+
+//MARK: CreateChannelVC
+"Create Channel" = "Tạo Kênh";
+
+

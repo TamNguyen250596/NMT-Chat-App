@@ -1,0 +1,14 @@
+//MARK: CreateAccountVC
+"Username" = "Tên người dùng";
+"Email" = "Email";
+"Password" = "Mật khẩu";
+
+//MARK: UpdateAccountVC
+"Please enter your new user name" = "Vui lòng nhập tên tài khoản mới của bạn";
+
+//MARK: CreateChannelVC
+"Channel name" = "Tên kênh";
+"Descriptiion" = "Mô tả";
+
+//MARK: ChatVC
+"Enter message here" = "Nhập tin nhắn tại đây";
