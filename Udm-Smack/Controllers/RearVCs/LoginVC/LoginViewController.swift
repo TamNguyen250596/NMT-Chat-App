@@ -46,10 +46,12 @@ class LoginViewController: UIViewController {
         
         AuthorService.instance.loginUser(email: email, password: password, completion: {
             (success) in
+            
             if success {
                 
                 AuthorService.instance.findUserByEmail(completion: {
                     (success) in
+                    
                     if success {
                         
                         NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
@@ -89,13 +91,15 @@ class LoginViewController: UIViewController {
     }
     
     @objc func handleTap() {
+        
         view.endEditing(true)
     }
     
     @objc func switchLanguages() {
-        userNameTxt.switchLanguges(localizedPlaceholder: "Username")
         
-        passwordTxt.switchLanguges(localizedPlaceholder: "Password")
+        userNameTxt.switchLanguages(localizedPlaceholder: "Username")
+        
+        passwordTxt.switchLanguages(localizedPlaceholder: "Password")
         
         logInBtn.switchLanguagesForButton(
             titleBtn: "Login", color: .white,

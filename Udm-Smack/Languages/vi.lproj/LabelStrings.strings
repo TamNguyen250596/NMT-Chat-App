@@ -13,9 +13,10 @@
 //MARK: CreateChannelVC
 "Create A Channel" = "Tạo Kênh Trò Chuyện";
 
-//MARK: ChannelVC
+//MARK: ChatVC
 "Please Log In" = "Xin Hãy Đăng Nhập";
 "List of channels" = "Danh sách kênh";
 "typing a message" = "đang nhắn tin";
 "are " = "";
 "is " = "";
+"No channels yet!" = "Chưa có kênh nào!";

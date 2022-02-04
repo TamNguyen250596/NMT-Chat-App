@@ -18,6 +18,7 @@ class UpdateUserNameVC: UIViewController {
     //MARK: View cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         updateView()
     }
     
@@ -35,10 +36,12 @@ class UpdateUserNameVC: UIViewController {
         AuthorService.instance.updateUser(
             name: newName,
             completion: { (success) in
+                
                 if success {
                     
                     AuthorService.instance.findUserByEmail(
                         completion: { (success) in
+                            
                             if success {
                                 
                                 self.spinner.isHidden = false
@@ -67,7 +70,7 @@ class UpdateUserNameVC: UIViewController {
             titleBtn: "Change", color: .thickBlue,
             fontType: .chalkboardRegular, fontsize: 20)
         
-        textField.switchLanguges(localizedPlaceholder: "Please enter your new user name")
+        textField.switchLanguages(localizedPlaceholder: "Please enter your new user name")
 
     }
 }

@@ -8,6 +8,7 @@
 import UIKit
 
 enum ResuableColors {
+    
     case thickBlue, lightBlue, white
     
     static func returnUIColor(color: ResuableColors) -> UIColor {
@@ -23,6 +24,7 @@ enum ResuableColors {
 }
 
 enum ResuableTypeOfFonts: String {
+    
     case chalkboardBold = "Chalkboard SE Bold"
     case chalkboardRegular = "Chalkboard SE Regular"
     case helvetica = "Helvetica"
@@ -31,5 +33,6 @@ enum ResuableTypeOfFonts: String {
 }
 
 enum AvatarType {
+    
     case dark, light
 }

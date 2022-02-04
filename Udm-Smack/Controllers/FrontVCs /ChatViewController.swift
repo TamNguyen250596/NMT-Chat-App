@@ -32,12 +32,17 @@ class ChatViewController: UIViewController {
     
     //MARK: API
     func fetchMessages() {
+        
         SocketService.instance.getChatMessage(completion: {
             (newMessage) in
+            
             if newMessage.channelId == MessageService.instance.selectedChannel?.id && AuthorService.instance.isLoggedin {
+                
                 MessageService.instance.message.append(newMessage)
                 self.tableView.reloadData()
+                
                 if MessageService.instance.message.count > 0 {
+                    
                     let endIndex = IndexPath(row: MessageService.instance.message.count - 1,
                         section: 0)
                     self.tableView.scrollToRow(
@@ -50,24 +55,33 @@ class ChatViewController: UIViewController {
     }
     
     func fetchTypingUsers() {
+        
         SocketService.instance.getTypingUsers({
             (typingUsers) in
+            
             guard let channelId = MessageService.instance.selectedChannel?.id else {return}
+            
             var names = ""
             var numberofTypers = 0
             
             for (typingUser, channel) in typingUsers {
+                
                 if typingUser != UserDataService.instance.name && channel == channelId {
+                    
                     if names == "" {
                         names = typingUser
+                        
                     } else {
+                        
                         names = "\(names), \(typingUser)"
                     }
+                
                     numberofTypers += 1
                 }
             }
             
             if numberofTypers > 0 && AuthorService.instance.isLoggedin == true {
+                
                 var verb = "is"
                 if numberofTypers > 1 {
                     verb = "are"
@@ -78,29 +92,43 @@ class ChatViewController: UIViewController {
                 + "typing a message".localized(using: Strings_LabelStrings)
                 
             } else {
+                
                 self.userTypeLbl.text = ""
             }
         })
     }
     
     func onLoginGetMessage() {
+        
         MessageService.instance.findAllChannel(completion: {
+            
             (success) in
+            
             if success {
+                
                 if MessageService.instance.channels.count > 0 {
+                    
                     MessageService.instance.selectedChannel = MessageService.instance.channels[0]
                     self.updateWithChannel()
+                    
                 } else {
-                    self.channelNameLbl.text = "No channels yet!"
+                    
+                    self.channelNameLbl.switchLanguagesForLabel(
+                        titleBtn: "No channels yet!", color: .white,
+                        fontType: .helveticaBold, fontsize: 20)
                 }
             }
         })
     }
 
     func getMessage() {
+        
         guard let channelId = MessageService.instance.selectedChannel?.id else {return}
+        
         MessageService.instance.findAllMessageForChannel(channelID: channelId, completion: { (success) in
+            
             if success {
+                
                 self.tableView.reloadData()
             }
         })
@@ -108,13 +136,17 @@ class ChatViewController: UIViewController {
     
     //MARK: Actions
     @IBAction func sendMessagePress(_ sender: Any) {
+        
         if AuthorService.instance.isLoggedin {
+            
             guard let channelId = MessageService.instance.selectedChannel?.id else {return}
             guard let message = messageTxtField.text else {return}
             
             SocketService.instance.addMessage(messageBody: message, userId: UserDataService.instance.id, channelId: channelId, completion: {
                 (success) in
+                
                 if success {
+                    
                     self.messageTxtField.text = ""
                     self.messageTxtField.resignFirstResponder()
                     SocketService.instance.socket.emit("stopType", with: [UserDataService.instance.name])
@@ -124,17 +156,23 @@ class ChatViewController: UIViewController {
     }
     
     @IBAction func messageBoxEditing(_ sender: Any) {
+        
         guard let channelId = MessageService.instance.selectedChannel?.id else {return}
         
         if messageTxtField.text == "" {
+            
             isTyping = false
             sendBtn.isHidden = true
             SocketService.instance.socket.emit("stopType", with: [UserDataService.instance.name])
+            
         } else {
+            
             if isTyping == false {
+                
                 sendBtn.isHidden = false
                 SocketService.instance.socket.emit("startType", with: [UserDataService.instance.name, channelId])
             }
+            
             isTyping = true
         }
     }
@@ -142,10 +180,12 @@ class ChatViewController: UIViewController {
     
     //MARK: Helpers
     func updateUI() {
+        
         hideNavigationBar(animated: true)
         
         menuBtn.imageView?.contentMode = .scaleAspectFit
         if self.revealViewController() != nil {
+            
         menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
@@ -164,7 +204,7 @@ class ChatViewController: UIViewController {
         
         sendBtn.isHidden = true
         userTypeLbl.text = ""
-        messageTxtField.switchLanguges(
+        messageTxtField.switchLanguages(
         localizedPlaceholder: "Enter message here")
     }
     
@@ -182,10 +222,12 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return MessageService.instance.message.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_CHAT_REUSABLE_ID, for: indexPath) as! ChatCell
         let message = MessageService.instance.message[indexPath.row]
         cell.updateCell(userAvatar: message.userAvatar, userAvatarColor: message.userAvatarColor, userName: message.userName, postedDate: message.timeStamp, message: message.message)
@@ -195,6 +237,7 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
 
 //MARK: Observed notification from loginVC and createAccountVC
 extension ChatViewController {
+    
     func addObserverFromUserLogin() {
         
         //Create a new account and login
@@ -202,17 +245,23 @@ extension ChatViewController {
         
         //Login the existing account
         if AuthorService.instance.isLoggedin {
+            
             AuthorService.instance.findUserByEmail(completion: {
                 (success) in
+                
                 NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
             })
         }
     }
     
     @objc func userDidChange(_ notif: Notification) {
+        
         if AuthorService.instance.isLoggedin {
+            
             onLoginGetMessage()
+            
         } else {
+            
             channelNameLbl.switchLanguagesForLabel(
                 titleBtn: "Please Log In", color: .white,
                 fontType: .helveticaBold, fontsize: 20)
@@ -230,10 +279,12 @@ extension ChatViewController {
     }
     
     @objc func channelSelected(_ notif: Notification) {
+        
         updateWithChannel()
     }
     
     func updateWithChannel() {
+        
         let channelName = MessageService.instance.selectedChannel?.channelTitle ?? ""
         channelNameLbl.text = "#\(channelName)"
         getMessage()

@@ -14,7 +14,6 @@
 		E936DBE62763405F00393EC4 /* CreateChannelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E936DBE42763405F00393EC4 /* CreateChannelVC.xib */; };
 		E936DBE8276351DE00393EC4 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E936DBE7276351DE00393EC4 /* SocketService.swift */; };
 		E968F7CE2769D10C00F438F0 /* Message .swift in Sources */ = {isa = PBXBuildFile; fileRef = E968F7CD2769D10C00F438F0 /* Message .swift */; };
-		E968F7D0276C2CAA00F438F0 /* KeyboardBound.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968F7CF276C2CAA00F438F0 /* KeyboardBound.swift */; };
 		E968F7D4276C39BE00F438F0 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968F7D2276C39BE00F438F0 /* ChatCell.swift */; };
 		E968F7D5276C39BE00F438F0 /* ChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E968F7D3276C39BE00F438F0 /* ChatCell.xib */; };
 		E9922465275E5DDE00B8CDA2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9922463275E5DDE00B8CDA2 /* ProfileViewController.swift */; };
@@ -68,7 +67,6 @@
 		E936DBE42763405F00393EC4 /* CreateChannelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateChannelVC.xib; sourceTree = "<group>"; };
 		E936DBE7276351DE00393EC4 /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		E968F7CD2769D10C00F438F0 /* Message .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Message .swift"; sourceTree = "<group>"; };
-		E968F7CF276C2CAA00F438F0 /* KeyboardBound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardBound.swift; sourceTree = "<group>"; };
 		E968F7D2276C39BE00F438F0 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		E968F7D3276C39BE00F438F0 /* ChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatCell.xib; sourceTree = "<group>"; };
 		E9922463275E5DDE00B8CDA2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -192,7 +190,6 @@
 			isa = PBXGroup;
 			children = (
 				E99F5EDD273F5EBB006A875C /* GradientView.swift */,
-				E968F7CF276C2CAA00F438F0 /* KeyboardBound.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -508,7 +505,6 @@
 				E936DBE52763405F00393EC4 /* CreateChannelVC.swift in Sources */,
 				E9EF612527872B80006E3DCD /* SwitchLanguages.swift in Sources */,
 				E930BE7E275716D0005DE4E1 /* AvatarPickerModel.swift in Sources */,
-				E968F7D0276C2CAA00F438F0 /* KeyboardBound.swift in Sources */,
 				E9BB0E4B275A0514000E216B /* ChatViewController.swift in Sources */,
 				E9BD2841273BFE8C00698298 /* AppDelegate.swift in Sources */,
 				E9BB0E0D2757B43D000E216B /* AvatarDarkAndLightCell.swift in Sources */,
@@ -719,7 +715,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.developer.Udm-Smack";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/nguyenminhtam/Desktop/Udm-Smack/Udm-Smack/Supporting File/SWRevealHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/nguyenminhtam/Desktop/Udm-Smack 2 3/Udm-Smack/Supporting File/SWRevealHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -751,7 +747,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.developer.Udm-Smack";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/nguyenminhtam/Desktop/Udm-Smack/Udm-Smack/Supporting File/SWRevealHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/nguyenminhtam/Desktop/Udm-Smack 2 3/Udm-Smack/Supporting File/SWRevealHeader.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

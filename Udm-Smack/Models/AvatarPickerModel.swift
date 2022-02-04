@@ -8,9 +8,11 @@
 import UIKit
 
 struct AvatarPickerModel {
+    
     public private(set) var avatarType:AvatarType
     
     func createDarkIconArray() -> [UIImage] {
+        
         var imageArray = [UIImage]()
         
         for i in 0...27 {
@@ -22,6 +24,7 @@ struct AvatarPickerModel {
     }
     
     func createLightIconArray() -> [UIImage] {
+        
         var imageArray = [UIImage]()
         
         for i in 0...27 {
@@ -33,10 +36,15 @@ struct AvatarPickerModel {
     }
     
     func getDarkOrLightIconArray() -> [UIImage] {
+        
         switch avatarType {
+            
         case .dark:
+            
             return createDarkIconArray()
+            
         case .light:
+            
             return createLightIconArray()
         }
     }

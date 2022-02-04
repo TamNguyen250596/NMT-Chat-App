@@ -18,10 +18,12 @@ class RoundedButton: UIButton {
     
     //MARK: View cycle
     override func awakeFromNib() {
+        
         self.layer.cornerRadius = cornerRadius
     }
 
     override func prepareForInterfaceBuilder() {
+        
         super.prepareForInterfaceBuilder()
         self.layer.cornerRadius = cornerRadius
     }

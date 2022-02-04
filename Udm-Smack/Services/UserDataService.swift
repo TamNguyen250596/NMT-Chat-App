@@ -26,14 +26,17 @@ class UserDataService {
     }
     
     func setAvatarName(avatarName:String) {
+        
         self.avatarName = avatarName
     }
     
     func updateUserName(name: String) {
+        
         self.name = name
     }
     
     func logOutUser() {
+        
         id = ""
         avatarName = ""
         avatarColor = ""
