@@ -40,6 +40,7 @@ class CreateAccountViewController: UIViewController {
             avatarName = UserDataService.instance.avatarName
             
             if avatarName.contains("light") && bgColor == UIColor.white {
+                
                 userImage.backgroundColor = UIColor.lightGray
             }
         }
@@ -57,13 +58,16 @@ class CreateAccountViewController: UIViewController {
         
         AuthorService.instance.registerUser(email: email, password: password)
         { success in
+            
             if success {
                 
                 AuthorService.instance.loginUser(email: email, password: password, completion: { success in
+                    
                     if success {
                         
                         AuthorService.instance.createUser(name: name, email: email, avatarName: self.avatarName, avatarColor: self.avatarColor, completion: {
                             success in
+                            
                             if success{
                                 
                                 self.activityIndicator.isHidden = true
@@ -100,6 +104,7 @@ class CreateAccountViewController: UIViewController {
         
     //MARK: Helpers
     func setUpView() {
+        
         self.hideNavigationBar(animated: true)
         activityIndicator.isHidden = true
         
@@ -110,12 +115,14 @@ class CreateAccountViewController: UIViewController {
     }
     
     @objc func handleTap() {
+        
         view.endEditing(true)
     }
 }
 
 //MARK: Switch Languages
 extension CreateAccountViewController {
+    
     func switchLanguages() {
         
         titleViewLbl.switchLanguagesForLabel(
@@ -134,11 +141,11 @@ extension CreateAccountViewController {
             titleBtn: "Create Account", color: .white,
             fontType: .helveticaBold, fontsize: 20)
         
-        usernameTxt.switchLanguges(localizedPlaceholder: "Username")
+        usernameTxt.switchLanguages(localizedPlaceholder: "Username")
         
-        emailTxt.switchLanguges(localizedPlaceholder: "Email")
+        emailTxt.switchLanguages(localizedPlaceholder: "Email")
         
-        passwordTxt.switchLanguges(localizedPlaceholder: "Password")
+        passwordTxt.switchLanguages(localizedPlaceholder: "Password")
         
 
     }

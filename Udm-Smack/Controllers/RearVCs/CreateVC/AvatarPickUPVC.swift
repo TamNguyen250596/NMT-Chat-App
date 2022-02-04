@@ -60,6 +60,7 @@ class AvatarPickUPVC: UIViewController {
 
 //MARK: Collection data source
 extension AvatarPickUPVC: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return AvatarPickerModel(avatarType: avatarType).getDarkOrLightIconArray().count
@@ -79,12 +80,16 @@ extension AvatarPickUPVC: UICollectionViewDelegate, UICollectionViewDataSource {
 
 //MARK: Collection actions
 extension AvatarPickUPVC {
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if avatarType == .dark {
+            
             UserDataService.instance.setAvatarName(
                 avatarName: "dark\(indexPath.item)")
+            
         } else {
+            
             UserDataService.instance.setAvatarName(
                 avatarName: "light\(indexPath.item)")
         }

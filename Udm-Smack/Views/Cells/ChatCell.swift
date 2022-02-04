@@ -21,6 +21,7 @@ class ChatCell: UITableViewCell {
 
     //MARK: Helpers
     func updateCell(userAvatar: String, userAvatarColor: String, userName: String, postedDate:String, message:String) {
+        
         self.userAvatar.image = UIImage(named: userAvatar)
         self.userAvatar.backgroundColor = String().returnColor(components: userAvatarColor)
         self.userNameLbl.text = userName
@@ -36,12 +37,14 @@ class ChatCell: UITableViewCell {
         newFormatter.dateFormat = "MM d, h:mm a"
         
         if let finalDate = chatDate {
+            
             let finalDate = newFormatter.string(from: finalDate)
             postedDateLbl.text = finalDate
         }
     }
     
     func updateUIOfLanguages(flagIcons: UIImage?, languages: String) {
+        
         self.userAvatar.image = flagIcons
         self.userNameLbl.text = languages
         self.postedDateLbl.isHidden = true

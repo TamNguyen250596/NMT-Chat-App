@@ -15,9 +15,11 @@ struct SwitchLanguagesModel {
     let availableLanguages = Localize.availableLanguages(true)
     
     func createArrayLanguages() -> [SwitchLanguagesModel] {
+        
         var arraySum = [SwitchLanguagesModel]()
         
         for language in availableLanguages {
+            
             let displayName = Localize.displayNameForLanguage(language)
             let array = SwitchLanguagesModel(flags: UIImage(named: "\(language)_flag"), languages: displayName)
             arraySum.append(array)
@@ -27,9 +29,13 @@ struct SwitchLanguagesModel {
         }
     
     func indexOfCurrentLanguage() -> Int {
+        
         if let index = availableLanguages.firstIndex(of: Localize.currentLanguage()) {
+            
             return index
+            
         } else {
+            
             return 0
         }
     }

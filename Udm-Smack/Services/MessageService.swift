@@ -18,12 +18,16 @@ class MessageService {
     var selectedChannel:Channel?
     
     func findAllChannel(completion: @escaping CompletionHandler) {
+        
         AF.request(URL_GET_CHANNEL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: .init(BEARER_HEADER), interceptor: nil, requestModifier: nil).responseJSON(completionHandler: {
             (response) in
+            
             switch response.result {
                 
             case .success(_):
+                
                 guard let data = response.data else {return}
+                
                 do {guard let json = try JSON(data: data).array else {return}
                     for item in json {
                         let name = item["name"].stringValue
@@ -32,12 +36,16 @@ class MessageService {
                         let channel = Channel(channelTitle: name, channelDescription: channelDescription, id: id)
                         self.channels.append(channel)
                     }
+                    
                     NotificationCenter.default.post(name: NOTIF_CHANNELS_LOADED, object: nil)
+                    
                     completion(true)
                 } catch {
                     debugPrint("The problem of trying to make JSON-data: \(error.localizedDescription)")
                 }
+                
             case .failure(_):
+                
                 completion(false)
                 debugPrint(response.error?.errorDescription as Any)
             }
@@ -45,14 +53,18 @@ class MessageService {
     }
     
     func findAllMessageForChannel(channelID: String, completion: @escaping CompletionHandler) {
+        
         AF.request("\(URL_GET_MESSAGE)\(channelID)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: .init(BEARER_HEADER), interceptor: nil, requestModifier: nil).responseJSON(completionHandler: {
             (response) in
+            
             switch response.result {
                 
             case .success(_):
+                
                 self.clearMessage()
                 
                 guard let data = response.data else {return}
+                
                 do {guard let json = try JSON(data: data).array else {return}
                     for item in json {
                         let messageBody = item["messageBody"].stringValue
@@ -71,7 +83,9 @@ class MessageService {
                 } catch {
                     debugPrint("The problem of trying to make JSON-data: \(error.localizedDescription)")
                 }
+                
             case .failure(_):
+                
                 completion(false)
                 debugPrint(response.error?.errorDescription as Any)
             }
@@ -79,10 +93,12 @@ class MessageService {
     }
     
     func clearChannel() {
+        
         channels.removeAll()
     }
     
     func clearMessage() {
+        
         message.removeAll()
     }
 }

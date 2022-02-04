@@ -40,6 +40,7 @@ class CreateChannelVC: UIViewController {
         
         SocketService.instance.addChannel(channelName: channelName, channelDescription: channelDescription, completion: {
             (sucess) in
+            
             if sucess {
                 
                 self.spinner.isHidden = true
@@ -75,8 +76,8 @@ class CreateChannelVC: UIViewController {
             titleBtn: "Create Channel", color: .white,
             fontType: .chalkboardBold, fontsize: 20)
         
-        userNameTxt.switchLanguges(localizedPlaceholder: "Channel name")
+        userNameTxt.switchLanguages(localizedPlaceholder: "Channel name")
         
-        channelDescriptionTxt.switchLanguges(localizedPlaceholder: "Descriptiion")
+        channelDescriptionTxt.switchLanguages(localizedPlaceholder: "Descriptiion")
     }
 }
