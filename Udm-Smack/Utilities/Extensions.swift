@@ -182,6 +182,8 @@ extension UILabel {
             attributes: atts)
         
         attributedText = attributedTitle
+        
+        print("DEBUG: switchLanguagesForLabel called")
     }
 }
 
